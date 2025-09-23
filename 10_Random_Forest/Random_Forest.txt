@@ -1,0 +1,31 @@
+1. Definition:
+ Random Forest is a powerful, flexible ensemble machine learning algorithm that uses a collection of
+ decision trees to make predictions.
+
+ It’s called “random” because:
+   1. Each tree is trained on a random subset of the data (called bootstrapping).
+   2. At each split in a tree, it considers a random subset of features.
+ Then:
+   - For classification, it uses majority vote (the class most trees agree on).
+   - For regression, it uses the average of all tree predictions.
+
+2. How it works:
+ We're trying to decide what fruit is inside a mystery bag. You can't open it, but you can feel: Shape, Size, Weight, Texture
+ -> Let’s say the options are: Apple, Banana, or Orange.
+
+ You ask one expert who has a decision flow like this:
+   - Is it long? → Yes → Probably a Banana
+   - Is it round and heavy? → Yes → Maybe an Orange
+   - Is it smooth and medium? → Yes → Apple
+ -> This works, but that expert could be wrong — maybe they only ever saw red apples, not green ones.
+
+ 🌲🌲🌲What a Random Forest Does:
+   You now ask 100 different fruit experts, each with their own random experience:
+      - Each expert trained on different fruits (random samples).
+      - Each expert only uses a random set of features (like size and weight, but not color).
+      - Each gives their guess.
+   You then take a vote:
+      - Apple: 60 votes
+      - Orange: 30 votes
+      - Banana: 10 votes
+   ✅ Final decision = Apple

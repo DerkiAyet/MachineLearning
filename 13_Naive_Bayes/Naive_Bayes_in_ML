@@ -1,0 +1,41 @@
+1. Definition:
+ Naive Bayes is a supervised machine learning algorithm used mostly for classification (putting things into categories).
+ Based on Bayes’ Theorem from probability.
+ Called “naive” because it assumes that all features are independent — which is almost never true in real life,
+ but surprisingly still works well.
+
+2. Bayes Theorem:
+
+  𝑃(𝐴∣𝐵)=(𝑃(𝐵∣𝐴)⋅𝑃(𝐴))/𝑃(𝐵)
+  
+   -> In classification terms:
+      𝐴 → the class (e.g., “Spam” or “Not Spam”)
+      𝐵 → the observed features (e.g., the words in the email)
+
+3. CountVectorizer:
+  it is a tool in scikit-learn that turns text data into numerical data so machine learning models can work with it.
+  
+  -> How it works:
+      from sklearn.feature_extraction.text import CountVectorizer
+      docs = ["I love pizza", "Pizza is great"]
+
+      vectorizer = CountVectorizer()
+      X = vectorizer.fit_transform(docs)
+
+      print(vectorizer.get_feature_names_out())  # the vocabulary
+      print(X.toarray())  # the numerical representation
+  -> Output:
+      ['great', 'love', 'pizza']
+      [[0 1 1],
+       [1 0 1]]
+  -> Where:
+      Vocabulary: "great" → column 0, "love" → column 1, "pizza" → column 2     
+
+  -> Remarque: Stop Words!!: are  very common words in a language that usually don’t add much meaning for classification, like:
+  in English: I, is, and, the, in, of.. → If we included them, they would appear in almost every text and wouldn’t help 
+  separate classes.
+
+4. Multinomial Naive Bayes
+ Multinomial Naive Bayes (MNB) is a classification algorithm based on the Naive Bayes theorem that’s especially suited
+ for discrete/count data — most often word counts in text classification.
+ used for: Spam detection, Sentiment analysis, Topic classification

@@ -1,0 +1,17 @@
+1. Bias vs. Variance:
+ 1️⃣ Bias: Error from making overly simple assumptions in your model.
+   -> Effect: The model misses patterns (underfitting).
+      Example: Trying to predict house prices with only “number of bedrooms” and ignoring location, size, etc. →
+      predictions are always off.
+
+ 2️⃣ Variance: Error from being too sensitive to training data.
+   -> Effect: The model learns noise instead of the real pattern (overfitting).
+      Example: Your house price model memorizes the exact prices from the training set — so it predicts perfectly there but fails badly on new houses.
+
+ 💡 In Other Words: Bias is Underfitting and Variance is Overfitting
+ 📌 So: 
+    - If you reduce bias → You usually increase variance (model gets more complex).
+    - If you reduce variance → You usually increase bias (model gets simpler).
+ 👍 The ideal model has:
+    - Low bias → it captures the real patterns in the data.
+    - Low variance → it stays stable and doesn’t freak out when given new data.

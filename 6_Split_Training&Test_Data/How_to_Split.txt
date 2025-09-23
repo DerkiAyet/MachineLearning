@@ -1,0 +1,19 @@
+1. Training vs. Test:
+| Set              | Purpose                                                          |
+| ---------------- | ---------------------------------------------------------------- |
+| **Training Set** | Used to teach the model (find patterns, fit coefficients, etc.). |
+| **Test Set**     | Used to **evaluate** the model’s performance on unseen data.     |
+
+2. What happens if we don't split❗
+
+  -> The model might perform great on training data but fail miserably on new data.
+  -> This is called overfitting — the model learned the training data too well, 
+  including noise or irrelevant patterns
+
+3. The Approach:
+  The approach we are going to use here is to split available data in two sets
+    -> Training: We will train our model on this dataset
+    -> Testing: We will use this subset to make actual predictions using trained model
+  ❗The reason we don't use same training set for testing is because our model has seen those samples before,
+  using same samples for making predictions might give us wrong impression about accuracy of our model. 
+  It is like you ask same questions in exam paper as you tought the students in the class.

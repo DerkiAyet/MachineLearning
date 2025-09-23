@@ -1,0 +1,33 @@
+1. Definition:
+ K-means is one of the most popular unsupervised machine learning algorithms used for clustering — grouping 
+ data points into a predefined number of clusters based on their similarity.
+
+2. How K-means Works
+ The algorithm follows an iterative process:
+  
+  1- Choose the number of clusters 𝑘 (this is a hyperparameter you set).
+  2- Initialize centroids (randomly pick 𝑘 points from the dataset).
+  3- Assign points to clusters :
+      - For each data point, find the closest centroid (using distance, usually Euclidean distance).
+  4- Update centroids
+      - For each cluster, calculate the mean position of all the points assigned to it → this becomes the new centroid.
+  5- Repeat steps 3 and 4 until:
+      - Centroids stop changing (convergence), or
+      - The algorithm reaches the maximum number of iterations.
+
+3. The Elbow Methode:
+ The Elbow Method is a way to figure out the best number of clusters 𝑘 to use in K-means (or other clustering algorithms).
+ The idea is:
+   - If 𝑘 is too small → clusters are too broad and mixed.
+   - If 𝑘 is too large → you’re over-splitting the data and not really learning anything useful.
+ 
+ How It Works: 
+  - Run K-means with different values of 𝑘 (for example, 𝑘=1 to 𝑘=10).
+  - For each 𝑘, calculate the inertia: Inertia= ∑ distance²(point i,its centroid)
+    -> Inertia = how tightly the points are grouped within their clusters.
+    -> Lower inertia = better clustering.
+  - Plot 𝑘 (x-axis) vs inertia (y-axis).
+  - Look for the "elbow" point:
+    -> At first, inertia drops quickly as 𝑘 increases (big improvement).
+    -> Then it starts to level off (small improvement).
+    -> The “bend” or elbow in the curve is the optimal 𝑘. (the best point is the curve like the human hand "the elbow")

@@ -1,0 +1,16 @@
+ 1. Performance
+
+| Feature   | `pickle`                           | `joblib`                             |
+| --------- | ---------------------------------- | ------------------------------------ |
+| Speed     | Slower with large **numpy arrays** | Faster for **large numpy arrays**    |
+| File size | Often larger                       | Often **smaller and more efficient** |
+
+2. Recommandation: scikit-learn itself recommends joblib for saving models.
+
+3. Syntax for Joblib:
+ import joblib
+ 
+ joblib.dump(model, 'model.joblib')
+ 
+ # Load
+ model = joblib.load('model.joblib')

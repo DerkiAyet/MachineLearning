@@ -1,0 +1,38 @@
+1. Overfitting: 
+ Overfitting in machine learning is when your model learns the training data too well — not just the real patterns,
+ but also the noise, outliers, and random fluctuations.
+ -> So it's like the model knows the training data too well, but when it comes to test it doesn't provide well.
+ -> How It Happens?
+     - The model is too complex (too many parameters, very deep trees, high-degree polynomials).
+     - Too little training data compared to model capacity.
+     - Training goes on for too many epochs (in neural networks).
+     - No regularization or constraints are applied.
+
+2. Regularization:
+ Regularization is a technique in machine learning used to reduce overfitting by penalizing model complexity.
+ -> It's like telling the student don't memorize everything but understand the main idea
+
+3- Types of Regularization:
+  a- L1 (Lasso) → makes some weights exactly 0 → throws away unimportant features.
+  b- L2 (Ridge) → makes weights small but not zero → keeps all features but weaker.
+  c- Elastic Net → mix of L1 and L2.
+
+4. Example with Multiple Regression:
+  We try to predict 𝑦 from multiple features 𝑥1,𝑥2,…,𝑥𝑛 :
+        𝑦≈ 𝑤1𝑥1 + 𝑤2𝑥2 + ⋯ + 𝑤𝑛𝑥𝑛 + 𝑏
+  We find 𝑤1,𝑤2,…,𝑤𝑛 (the weights) by minimizing the error:
+        Error= ∑(𝑦𝑖−𝑦^𝑖)²
+  1- L1 Regularization (Lasso)
+      We modify the loss function:
+         Loss= Error+𝜆∑∣𝑤𝑗∣ → L1 can push some weights exactly to 0 — → effectively removing some features.
+      Without regularization:
+         𝑤1= 5, 𝑤2= −4, 𝑤3= 0.5
+      With L1 regularization:
+         𝑤1= 4.1, 𝑤2= 0, 𝑤3= 0.3 → Notice 𝑤2 is now exactly 0 → the feature 𝑥2 is dropped from the model.
+  2- L2 Regularization (Ridge)
+      We modify the loss function:
+         Loss= Error+𝜆∑𝑤𝑗² → The 𝑤𝑗² term grows quickly when weights get large, so big weights are heavily penalized → This shrinks weights towards 0 but rarely makes them exactly 0.
+​      Let’s say without regularization:
+         𝑤1= 5, 𝑤2= −4
+      If 𝜆 is applied, the model sees that having such big weights increases the loss. It might reduce them to:
+         𝑤1= 3.2, 𝑤2= −2.8 → This reduces variance (less sensitive to training data).

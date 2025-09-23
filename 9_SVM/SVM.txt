@@ -1,0 +1,32 @@
+1. Definition:
+ Support Vector Machine (SVM) is a supervised machine learning algorithm used for classification
+ and regression tasks. It's especially powerful in classification problems, both linear and non-linear
+
+2. Basic Idea of SVM (for Classification)
+ SVM aims to find the best hyperplane that separates data points of different classes with the maximum margin.
+   - For 2D data, the hyperplane is a line.
+   - For 3D data, it's a plane.
+   - For higher dimensions, it's called a hyperplane.
+
+3. Why Maximizing the Margin Helps
+ Imagine two lines separating two classes:
+   - Line A: Right in between the two classes, with a wide gap (large margin).
+   - Line B: Very close to one class, almost touching the points (small margin).
+
+ -> If you introduce new data, line A is more likely to still classify correctly because it’s farther from both
+  classes → more room for error.
+
+4. How the SVM work in case of non-linear data:
+ For non-linear data (not linearly separable), SVM uses a kernel trick to map data into higher-dimensional 
+ space where a linear separation is possible.
+
+ - Example: we have two crateristics x and y and it's quite difficult to seperate the data, so we base on x and z 
+  where z = x + y for example (this called the kernel), and in this case the data in the cahrt becomes clear to sperate 
+  in a linear way
+
+5. Gamma and Regularization Parameter (C):
+  - Gamma: affects the shape of the decision boundary, part of the kernel function, plays the role of Shape of similarity
+     -> Low gamma: Smooth, simple boundary
+     -> High gamma: Tight, complex boundary
+  - Regularization (C): Affects the margin size and tolerance to misclassification, plays the role of Error penalty
+     -> the more C is high the more the sepration or the hyperplane is fitting the data and less error in classification

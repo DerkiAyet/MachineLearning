@@ -1,0 +1,83 @@
+1. Definition:
+ One-hot encoding is a method used to convert categorical (text) data into numerical data, 
+ so it can be used in machine learning models.
+
+2. Problem!!:
+the main problem is when the data is categorical we can't labeled the values in a random way:
+-> For example:
+  ML models can't work directly with text like "Red", "Blue", "Green".
+  They need numbers. But if we just assign:
+
+  Red = 1, Blue = 2, Green = 3
+
+  -> The model will think Green > Blue > Red,or: Blue + Red = Green!! which is not true (no order here!).
+
+  ✅ One-hot encoding solves this by turning each category into a separate column with 1 or 0 values (on/off = hot/cold)
+
+3. Mechanism:
+so basicaly we have this example:
+ 📥 Original data:
+|       town      | area | price  |
+| --------------- | ---- | ------ |
+| monroe township | 2600 | 550000 |
+| monroe township | 3000 | 565000 |
+| monroe township | 3200 | 610000 |
+| monroe township | 3600 | 680000 |
+| monroe township | 4000 | 725000 |
+| west windsor    | 2600 | 585000 |
+| west windsor    | 2800 | 615000 |
+| west windsor    | 3300 | 650000 |
+| west windsor    | 3600 | 710000 |
+| robinsville     | 2600 | 575000 |
+| robinsville     | 2900 | 600000 |
+| robinsville     | 3100 | 620000 |
+
+ 🔁 After one-hot encoding the town column:
+
+| area | price  | monroe township | robinsville | west windsor |
+| ---- | ------ | --------------- | ----------- | ------------ |
+| 2600 | 550000 | 1               | 0           | 0            |
+| 3000 | 565000 | 1               | 0           | 0            |
+| 3200 | 610000 | 1               | 0           | 0            |
+| 3600 | 680000 | 1               | 0           | 0            |
+| 4000 | 725000 | 1               | 0           | 0            |
+| 2600 | 585000 | 0               | 0           | 1            |
+| 2800 | 615000 | 0               | 0           | 1            |
+| 3300 | 650000 | 0               | 0           | 1            |
+| 3600 | 710000 | 0               | 0           | 1            |
+| 2600 | 575000 | 0               | 1           | 0            |
+| 2900 | 600000 | 0               | 1           | 0            |
+| 3100 | 620000 | 0               | 1           | 0            |
+
+-> Each row has a 1 in the column of its original town, and 0s in the others
+
+4. Dummy Variables:
+ Dummy variables are binary (0 or 1) variables used to represent categorical data in numerical 
+ form so it can be used in statistical or machine learning models.
+ (So we can remark that the One Hot Encoding method make dummy variables "the 0/1 work like indicators")
+
+5. Problem!!(Dummy Variable Trap):
+ It happens when you include all dummy variables from a categorical column in a regression model.
+ This introduces a problem called perfect multicollinearity — when one variable can be exactly predicted from others.
+
+-> Well, to simplify it let's take an example:
+ Suppose you have a Color column with 3 categories: Red, Blue, Green.
+
+ After one-hot encoding (without dropping any):
+ | Color_Red  | Color_Blue  | Color_Green |
+ | ---------- | ----------  | ----------- |
+ | 1          | 0           | 0           |
+ | 0          | 1           | 0           |
+ | 0          | 0           | 1           |
+ | 0          | 1           | 0           |
+
+ But here’s the thing:
+   If you know Color_Red = 0 and Color_Blue = 0, then Color_Green must be 1.
+   That means the third column is 100% predictable from the others.
+
+   ➡️ That creates linear dependence → which breaks the math in linear regression (matrix inversion fails)
+
+-> So for the linear Regression methode having all the dummy variables together that like we said are linearly dependent
+will be a problem for a methode that works with independant variables!!
+
+✅ In the end: we should always drop a dummy variable to avoid such dependant relation

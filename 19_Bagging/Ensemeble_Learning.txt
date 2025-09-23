@@ -1,0 +1,24 @@
+1. Definition:
+ Goal -> Reduce variance (overfitting) and improve stability by combining multiple models.
+
+2. How it works:
+  a. Bootstrap sampling
+     - From your training set, you create several random samples with replacement.
+        → “With replacement” means the same data point can appear multiple times in one sample.
+  b. Train separate models
+     - You train one model per sample.
+     - Often, the models are of the same type (e.g., decision trees).
+  c. Aggregate predictions
+     - For classification: Take the majority vote.
+     - For regression: Take the average of predictions.
+
+3. Random Forest vs. Bagging (Plain Bagging):
+  → In plain bagging, each tree can look at all features (all the columns) when deciding how to split at each node.
+  → In Random Forest adds feature randomness on top of data randomness: At each split in a tree, it does not look 
+  at all features,  (e.g., from 5 features, maybe only 3 are considered).
+
+  💡Why This in Random Forest:
+     . This forces diversity between trees.
+     . If all trees had access to the same strongest feature at the root, they'd look very similar → highly correlated models → 
+     less benefit from averaging.
+

@@ -1,0 +1,20 @@
+1. Decision Tree:
+ A Decision Tree is a flowchart-like structure used for classification or regression. 
+ You split the data into subsets based on feature values so that the final result is a decision (a class).
+
+ - Each internal node: a test on a feature
+ - Each leaf node: a class label (in classification) ---nafss li 9rinaha fi SIAD
+
+2. Entropy and Information Gain
+1️⃣ Entropy – measures the "impurity" (or disorder) of a group:
+  - If all the items belong to one class → Entropy = 0
+  - If the group is half class A and half class B → Entropy = 1 (max disorder)
+  - Formula: Entropy(S)= ∑pi.log2(pi)
+
+2️⃣ Information Gain – how much entropy decreases after a split:
+  - It tells you how good a feature is at separating the classes.
+  - Formula: Information Gain= Entropy(𝑆)−∑(∣𝑆𝑗∣/∣𝑆∣)⋅Entropy(𝑆𝑗)
+    Where:
+      - 𝑆 is the current dataset
+      - 𝑆𝑗 is the subset after splitting on a feature
+      - ∣𝑆𝑗∣/∣𝑆∣ is the weight (how big the subset is compared to the whole)

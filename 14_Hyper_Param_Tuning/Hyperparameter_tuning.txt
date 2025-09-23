@@ -1,0 +1,18 @@
+1. Definition:
+ Hyperparameter tuning is the process of finding the best set of parameters for a machine learning model to 
+ improve its performance.
+
+2. Model parameters vs hyperparameters:
+  - Parameters → learned automatically during training (e.g., weights in linear regression, decision tree splits).
+  - Hyperparameters → you choose them before training, and they control how the model learns (e.g., learning rate,
+  number of trees, max depth).
+
+3. How to do hyperparameter tuning:
+ There are 3 main methods:
+   a- Manual Search: You just try different combinations yourself → time consuming and random.
+   b- Grid Search (Exhaustive search): using GridSearchCV from sklearn.model_selection
+     ✅ Finds the best combination.
+     ❌ Slow if there are many parameters.
+   c- Random Search: Instead of testing all combinations, it picks random combinations for a fixed number of trials
+     ✅ Faster for large search spaces.
+     ❌ Might miss the exact best combination.

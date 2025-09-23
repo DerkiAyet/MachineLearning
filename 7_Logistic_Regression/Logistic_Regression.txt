@@ -1,0 +1,58 @@
+1. Definition:
+ Unlike linear regression which predicts continuous values, the logistic regression it predicts the probability 
+ that an input belongs to a specific class. It is used for binary classification where the output can be one 
+ of two possible categories such as Yes/No, True/False or 0/1. It uses sigmoid function to convert inputs into 
+ a probability value between 0 and 1.
+
+2. Types of Logistic Regression:
+ Logistic regression can be classified into three main types based on the nature of the dependent variable:
+
+ -> Binomial Logistic Regression: This type is used when the dependent variable has only two possible categories. 
+  Examples include Yes/No, Pass/Fail or 0/1.
+
+ -> Multinomial Logistic Regression: This is used when the dependent variable has three or more possible categories
+  that are not ordered. For example, classifying animals into categories like "cat," "dog" or "sheep."
+
+ -> Ordinal Logistic Regression: This type applies when the dependent variable has three or more categories with 
+  a natural order or ranking. Examples include ratings like "low," "medium" and "high." It takes the order of 
+  the categories into account when modeling.
+
+3. The Formula:
+  The logistic function is:
+      σ(z) = 1/(1 + e^(-z))
+  Where: 
+      z = w1x1+w2x2+.....wnxn+b(a linear combination of input features)
+      𝜎(𝑧) is the probability that the input belongs to class 1
+      If (𝜎(𝑧) > threshold) predict class 1; otherwise, predict class 0 (where threshold=0.5 usualy)
+
+4. Confusion Matrix:
+ A confusion matrix is a table that compares the actual (true) labels with the predicted 
+ labels from the model.
+
+5. How to read the matrix:
+ The matrix is square, and each row and column represents one class.
+ -> Rows = Actual classes
+ -> Columns = Predicted classes
+ Example: Let’s say we have a 3-class classification (e.g., predicting digits 0, 1, and 2),
+ and we get the following confusion matrix:
+               Predicted
+             0     1     2
+        0   [8     1     0]
+Actual  1   [0     7     2]
+        2   [1     0     9]
+
+    🔍 How to read it:
+    Row 0, Column 0 (8):
+      -> 8 samples were truly class 0, and the model predicted 0 → ✅ correct
+    Row 0, Column 1 (1):
+      -> 1 sample was truly class 0, but the model predicted 1 → ❌ mistake
+    Row 1, Column 2 (2):
+      -> 2 samples were actually 1, but predicted as 2 → ❌ mistake
+    Row 2, Column 2 (9):
+      -> 9 samples were truly 2, and predicted as 2 → ✅ correct
+
+    ✅ Rule of Thumb:
+      - Look at the diagonal → correct predictions.
+      - Off-diagonal values → where your model makes mistakes.
+      - The bigger the number on the diagonal, the better.
+

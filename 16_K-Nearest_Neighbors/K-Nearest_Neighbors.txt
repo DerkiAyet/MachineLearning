@@ -1,0 +1,7 @@
+1. Definition:
+ KNN is a supervised machine learning algorithm used for classification and sometimes regression.
+ It works by looking at the closest data points (neighbors) to decide the label of a new point -> Euclidien Distance
+
+2. Key things to know:
+ - K too small → sensitive to noise (overfitting).
+ - K too large → too generalized (underfitting).

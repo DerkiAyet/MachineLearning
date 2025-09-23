@@ -1,0 +1,31 @@
+1. Definition:
+ PCA is a dimensionality reduction technique.
+ It takes your data with many features (columns) and transforms it into a smaller set of new features (called principal components) that:
+  - Still keep most of the important information.
+  - Remove noise and redundancy.
+
+2. General PCA Algorithm:
+ Step 1 — Standardize the data:
+    PCA is affected by scale, so we make each feature have mean = 0 and variance = 1.
+           𝑋'= (𝑋−mean(𝑋))/std(𝑋)  -> std: l'ecart type
+
+ Step 2 — Compute the covariance matrix
+    The covariance matrix tells us how features vary together.
+           Cov=1/(𝑚−1).transposé de 𝑋'.𝑋 -> m: number of individuals
+ 
+ Step 3 — Find eigenvalues & eigenvectors
+    Eigenvectors → directions (principal components) where the data varies the most.
+    Eigenvalues → how much variance each eigenvector captures.
+       ** Remarque: sum of eignvalues = number of components = inetie totale = la trace de la matrice de covariance
+
+ Step 4 — Sort by variance
+    - Sort eigenvalues from largest to smallest.
+    - Keep their corresponding eigenvectors in the same order.
+    - Large eigenvalue = more variance explained.
+
+ Step 5 — Choose the number of components
+    - Compute cumulative variance ratio:
+         Cumulative Variance = sum of first k eigenvalues / sum of all eigenvalues
+​    - Pick k so that cumulative variance ≥ your target (e.g., 80%, 90%, 95%)
+
+ Step 6 — Projection in the charge Circle

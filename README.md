@@ -6,10 +6,10 @@ My learning journey through the core concepts of machine learning, with hands-on
 
 | # | Topic |
 |---|---|
-| 01 | [Linear Regression](./01_linear_regression) |
-| 02 | [Multiple Regression](./02_multiple_regression) |
-| 03 | [Gradient Descent](./03_gradient_descent) |
-| 04 | [Saving Models (Pickle & Joblib)](./04_save_model_pickle_joblib) |
+| 01 | [Linear Regression](./01_LinearRegression) |
+| 02 | [Multiple Regression](./02_MultipleRegression) |
+| 03 | [Gradient Descent](./03_GradientDescent) |
+| 04 | [Saving Models (Pickle & Joblib)](./04_SaveModelPickle&Joblib) |
 | 05 | [Categorical Variables & Dummy Encoding](./05_categorical_dummy_variables) |
 | 06 | [Train/Test Split](./06_train_test_split) |
 | 07 | [Logistic Regression](./07_logistic_regression) |

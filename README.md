@@ -6,25 +6,25 @@ My learning journey through the core concepts of machine learning, with hands-on
 
 | # | Topic |
 |---|---|
-| 01 | [Linear Regression](./01_LinearRegression) |
-| 02 | [Multiple Regression](./02_MultipleRegression) |
-| 03 | [Gradient Descent](./03_GradientDescent) |
-| 04 | [Saving Models (Pickle & Joblib)](./04_SaveModelPickle&Joblib) |
-| 05 | [Categorical Variables & Dummy Encoding](./05_categorical_dummy_variables) |
-| 06 | [Train/Test Split](./06_train_test_split) |
-| 07 | [Logistic Regression](./07_logistic_regression) |
-| 08 | [Decision Tree](./08_decision_tree) |
-| 09 | [Support Vector Machine (SVM)](./09_svm) |
-| 10 | [Random Forest](./10_random_forest) |
-| 11 | [Cross Validation](./11_cross_validation) |
-| 12 | [K-Means Clustering](./12_k_means) |
-| 13 | [Naive Bayes](./13_naive_bayes) |
-| 14 | [Hyperparameter Tuning](./14_hyperparameter_tuning) |
-| 15 | [L1 & L2 Regularization](./15_l1_l2_regularization) |
-| 16 | [K-Nearest Neighbors](./16_k_nearest_neighbors) |
-| 17 | [Principal Component Analysis (PCA)](./17_pca) |
-| 18 | [Bias vs. Variance](./18_bias_vs_variance) |
-| 19 | [Bagging](./19_bagging) |
+| 01 | [Linear Regression](./1_LinearRegression) |
+| 02 | [Multiple Regression](./2_MultipleRegression) |
+| 03 | [Gradient Descent](./3_GradientDescent) |
+| 04 | [Saving Models (Pickle & Joblib)](./4_SaveModelPickle&Joblib) |
+| 05 | [Categorical Variables & Dummy Encoding](./5_categorical_dummy_variables) |
+| 06 | [Train/Test Split](./6_Split_Training&Test_Data) |
+| 07 | [Logistic Regression](./7_Logistic_Regression) |
+| 08 | [Decision Tree](./8_Decision_Tree) |
+| 09 | [Support Vector Machine (SVM)](./9_SVM) |
+| 10 | [Random Forest](./10_Random_Forest) |
+| 11 | [Cross Validation](./11_Cross_Validation) |
+| 12 | [K-Means Clustering](./12_K-Means) |
+| 13 | [Naive Bayes](./13_Naive_Bayes) |
+| 14 | [Hyperparameter Tuning](./14_Hyper_Param_Tuning) |
+| 15 | [L1 & L2 Regularization](./15_L1_L2_Regularization) |
+| 16 | [K-Nearest Neighbors](./16_K-Nearest_Neighbors) |
+| 17 | [Principal Component Analysis (PCA)](./17_PCA) |
+| 18 | [Bias vs. Variance](./18_Bias_vs.Variance) |
+| 19 | [Bagging](./19_Bagging) |
 
 ## Projects
 
